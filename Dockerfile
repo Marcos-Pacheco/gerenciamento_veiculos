@@ -10,7 +10,7 @@ WORKDIR /var/www
 
 # instala depêndencias
 RUN apt-get update 
-RUN apt-get install -y build-essential libxpm-dev libwebp-dev libpng-dev libjpeg62-turbo-dev libfreetype6-dev locales zip jpegoptim optipng pngquant gifsicle vim nano unzip git curl libzip-dev zlib1g-dev libicu-dev libgmp-dev libpq-dev libxml2-dev cron libmagickwand-dev libmagickcore-dev imagemagick
+RUN apt-get install -y build-essential libxpm-dev libwebp-dev libpng-dev libjpeg62-turbo-dev libfreetype6-dev locales zip jpegoptim optipng pngquant gifsicle vim nano unzip git curl libzip-dev zlib1g-dev libicu-dev libgmp-dev libpq-dev libxml2-dev cron libmagickwand-dev libmagickcore-dev imagemagick npm
 RUN pecl install imagick
 RUN docker-php-ext-enable imagick
 RUN docker-php-ext-enable opcache
@@ -18,6 +18,9 @@ RUN docker-php-ext-configure gd --prefix=/usr --with-jpeg --with-webp --with-xpm
 RUN docker-php-ext-install gd
 RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 RUN docker-php-ext-install bcmath exif pcntl zip calendar intl gmp pdo pdo_pgsql pgsql soap sockets
+
+# instala node
+RUN npm install npm@latest -g && npm install n -g && n latest
 
 # limpa o cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 

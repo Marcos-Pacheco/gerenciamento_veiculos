@@ -14,9 +14,12 @@ services:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
     working_dir: /var/www/
+    # command: bash -c "cd gerenciamento_veiculos && npm run dev"
     volumes:
       - ./:/var/www
       # - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    ports:
+      - "5173:5173"
     networks:
       - default
       - database
@@ -28,7 +31,7 @@ services:
     restart: always
     tty: true
     ports:
-      - "87:80"
+      - "86:80"
       - "445:443"
     volumes:
       - ./:/var/www
