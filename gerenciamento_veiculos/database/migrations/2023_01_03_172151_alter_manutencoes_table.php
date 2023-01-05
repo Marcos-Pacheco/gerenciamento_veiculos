@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipos_servico', function (Blueprint $table) {
-            $table->id();
-            $table->string('descricao',250);
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('manutencoes', function (Blueprint $table) {
+            $table->string('observacao')->nullable()->change();
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipos_servico');
+        Schema::table('manutencoes', function (Blueprint $table) {
+            $table->string('observacao')->nullable(false)->change();
+        });
     }
 };

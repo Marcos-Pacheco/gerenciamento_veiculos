@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('tipos_veiculo_id')->references('id')->on('tipos_veiculo');
             $table->smallInteger('ano')->check('ano >= 0000 AND ano <= 9999');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

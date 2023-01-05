@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('tipos_servico_id')->references('id')->on('tipos_servico');
             $table->foreignId('veiculos_id')->references('id')->on('veiculos');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
