@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('observacao',500);
             $table->foreignId('tipos_servico_id')->references('id')->on('tipos_servico');
             $table->foreignId('veiculos_id')->references('id')->on('veiculos');
+            $table->foreignId('users_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });

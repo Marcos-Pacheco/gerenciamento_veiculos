@@ -2,21 +2,21 @@
 
 namespace Database\Factories;
 
-use App\Models\Veiculos;
+use App\Models\Veiculo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Provider\Fakecar;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Veiculos>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Veiculo>
  */
-class VeiculosFactory extends Factory
+class VeiculoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Veiculos::class;
+    protected $model = Veiculo::class;
 
     /**
      * Define the model's default state.

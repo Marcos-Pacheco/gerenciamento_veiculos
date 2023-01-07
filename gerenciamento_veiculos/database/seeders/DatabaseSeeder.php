@@ -15,21 +15,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::factory(10)->create();
+        User::factory(9)->create();
 
         User::factory()->create([
             'name' => 'marcos',
             'email' => 'test@example.com',
             'password' => bcrypt('123456789'),
-            'phone' => '99999999999',
+            'phone' => fake()->phoneNumber(),
             'role' => 1
         ]);
 
         $this->call([
-            TiposServicoSeeder::class,
-            TiposVeiculoSeeder::class,
-            VeiculosSeeder::class,
-            ManutencoesSeeder::class,
+            TipoServicoSeeder::class,
+            TipoVeiculoSeeder::class,
+            VeiculoSeeder::class,
+            ManutencaoSeeder::class,
         ]);
     }
 }

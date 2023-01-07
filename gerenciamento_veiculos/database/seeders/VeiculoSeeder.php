@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\TiposServico;
+use App\Models\Veiculo;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TiposServicoSeeder extends Seeder
+class VeiculoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class TiposServicoSeeder extends Seeder
      */
     public function run()
     {
-        TiposServico::factory()->count(10)->create();
+        Veiculo::factory()->count(10)->create();
     }
 }

@@ -2,20 +2,20 @@
 
 namespace Database\Factories;
 
-use App\Models\Manutencoes;
+use App\Models\Manutencao;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Manutencoes>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Manutencao>
  */
-class ManutencoesFactory extends Factory
+class ManutencaoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Manutencoes::class;
+    protected $model = Manutencao::class;
 
     /**
      * Define the model's default state.
@@ -31,7 +31,8 @@ class ManutencoesFactory extends Factory
             'data_manutencao' => fake()->dateTimeThisMonth($max = 'now', $timezone = null),
             'observacao' => fake()->text($maxNbChars = 255),
             'tipos_servico_id' => fake()->numberBetween($int1 = 1, $int2 = 10),
-            'veiculos_id' => fake()->numberBetween($int1 = 1, $int2 = 10)
+            'veiculos_id' => fake()->numberBetween($int1 = 1, $int2 = 10),
+            'users_id' => fake()->numberBetween($int1 = 1, $int2 = 10)
         ];
     }
 }

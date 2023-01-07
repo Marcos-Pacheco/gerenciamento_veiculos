@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreManutencoesRequest extends FormRequest
+class StoreTipoServicoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreManutencoesRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,12 +24,7 @@ class StoreManutencoesRequest extends FormRequest
     public function rules()
     {
         return [
-            'descricao' => 'required|max:250',
-            'custo' => 'required',
-            'data_proxima_manutencao' => 'required',
-            'data_manutencao' => 'required',
-            'tipos_servico_id' => 'required',
-            'veiculos_id' => 'required'
+            'descricao' => 'required|max:250'
         ];
     }
 }

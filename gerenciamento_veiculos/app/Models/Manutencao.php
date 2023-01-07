@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Manutencoes extends Model
+class Manutencao extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -18,7 +20,8 @@ class Manutencoes extends Model
         'data_manutencao',
         'observacao',
         'tipos_servico_id',
-        'veiculos_id'
+        'veiculos_id',
+        'users_id'
     ];
 
     public function tipo_servico()
