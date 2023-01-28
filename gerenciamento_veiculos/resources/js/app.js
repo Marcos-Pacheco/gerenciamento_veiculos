@@ -5,7 +5,10 @@
  */
 
 import './bootstrap';
-import { createApp } from 'vue';
+import { createApp, h } from 'vue';
+import React from "react";
+import { render } from "react-dom";
+import { createinertiaApp } from "@inertiajs/inertia-react";
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -36,4 +39,12 @@ app.component('example-component', ExampleComponent);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+// app.mount('#app');
+createInertiaApp({
+    resolve: name => import(`.Pages/${name}`),
+    setup({ el, App, props, plugin }) {
+        createApp({ render: () => h(App,props)})
+        .use(plugin)
+        .mount(el)
+    }
+});

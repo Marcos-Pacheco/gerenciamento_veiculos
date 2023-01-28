@@ -17,6 +17,10 @@
         "vue": "^3.2.37"
     },
     "dependencies": {
+        "@inertiajs/inertia": "^0.11.1",
+        "@inertiajs/inertia-react": "^0.8.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "v-mask": "^2.3.0",
         "vue-the-mask": "^0.11.1"
     }
